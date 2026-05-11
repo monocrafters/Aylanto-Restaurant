@@ -291,7 +291,10 @@ export default function ReservationsPage() {
                 <ul
                   role="listbox"
                   aria-labelledby="guests-trigger"
-                  className="absolute left-0 right-0 top-full z-[60] mt-1 max-h-[min(18rem,52vh)] overflow-auto rounded-xl border border-white/12 bg-[#0a0a0f] py-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.55)] ring-1 ring-white/[0.04]"
+                  onWheel={(e) => e.stopPropagation()}
+                  onTouchMove={(e) => e.stopPropagation()}
+                  className="absolute left-0 right-0 top-full z-[60] mt-1 max-h-[min(14rem,42vh)] overflow-y-auto overscroll-contain touch-pan-y rounded-xl border border-white/12 bg-[#0a0a0f] py-1.5 shadow-[0_20px_50px_rgba(0,0,0,0.55)] ring-1 ring-white/[0.04]"
+                  style={{ WebkitOverflowScrolling: "touch" }}
                 >
                   {PRESET_COUNTS.map((n) => (
                     <li key={n} role="presentation">
